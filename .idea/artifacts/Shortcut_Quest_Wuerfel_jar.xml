@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Shortcut Quest Wuerfel:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Shortcut_Quest_Wuerfel_jar</output-path>
+    <root id="archive" name="Shortcut Quest Wuerfel.jar">
+      <element id="module-output" name="Shortcut Quest Wuerfel" />
+    </root>
+  </artifact>
+</component>
