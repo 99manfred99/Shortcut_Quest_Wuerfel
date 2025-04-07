@@ -14,9 +14,10 @@ class Main {
             //Abfrage ob man auf gerade oder ungerade wettet
 
             System.out.println("Willkommen im Würfel Programm");
-            System.out.println("Glaubst du die Zahl wird gerade oder ungerade?");
+            System.out.println("[1] Glaubst du das die Zahl gerade ist");
+            System.out.println("[2] Glaubst du das die Zahl ungerade ist");
             Scanner scanner = new Scanner(System.in);
-            String wette = scanner.nextLine();
+            int wette = scanner.nextInt();
 
 
             //Würfel
@@ -39,28 +40,33 @@ class Main {
 
 
             //Kontrolliert ob das Ergebnis gerade ist
+                if (wette == 1 && gerade) {
+                    System.out.println("Du hast gewonnen");
 
-            if (gerade == true && wette.equals("gerade")) {
-                System.out.println("Du hast gewonnen");
-            } else if (gerade == false && wette.equals("ungerade")) {
-                System.out.println("Du hast gewonnen");
-            } else if (gerade == true && wette.equals("ungearde")) {
-                System.out.println("Du hast leider verloren");
-            } else if (gerade == false && wette.equals("gerade")) {
-                System.out.println("Du hast leider verloren");
-            }
-            //Fragt ob das Programm beendet werden soll
-            System.out.println("[1]Nochmal Spielen");
-            System.out.println("[2]Beenden");
-            Scanner scanner2 = new Scanner(System.in);
-            int wiederholen = scanner2.nextInt();
-            if (wiederholen == 1) {
-                System.out.println("Starte neu");
-            }else if (wiederholen == 2){
-                System.out.println("Wird beendet");
-                break;
+                } else if (wette == 2 && !gerade) {
+                    System.out.println("Du hast gewonnen");
 
-            }
+                } else if (wette == 1 && !gerade) {
+                    System.out.println("Du hast verloren");
+
+                } else if (wette == 2 && gerade) {
+                    System.out.println("Du hast verloren");
+
+                }
+
+
+                //Fragt ob das Programm beendet werden soll
+                System.out.println("[1]Nochmal Spielen");
+                System.out.println("[2]Beenden");
+                Scanner scanner2 = new Scanner(System.in);
+                int wiederholen = scanner2.nextInt();
+                if (wiederholen == 1) {
+                    System.out.println("Starte neu");
+                } else if (wiederholen == 2) {
+                    System.out.println("Wird beendet");
+                    break;
+
+                }
 
 
             }
