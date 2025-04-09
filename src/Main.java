@@ -4,6 +4,8 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
 
+        System.out.println("Test123");
+
         while (true) {
             //Variable ob die gewürfelte Zahl gerade ist
             //Gewürfelte Zahl gerade   gerade = true
@@ -67,8 +69,6 @@ class Main {
                     break;
 
                 }
-
-
             }
         }
     }
