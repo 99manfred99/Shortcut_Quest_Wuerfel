@@ -1,5 +1,5 @@
 import java.util.Random;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 class Main {
     public static void main(String[] args) {
@@ -15,11 +15,9 @@ class Main {
 
             //Abfrage ob man auf gerade oder ungerade wettet
 
-            System.out.println("Willkommen im Würfel Programm");
-            System.out.println("[1] Glaubst du das die Zahl gerade ist");
-            System.out.println("[2] Glaubst du das die Zahl ungerade ist");
-            Scanner scanner = new Scanner(System.in);
-            int wette = scanner.nextInt();
+            JOptionPane.showMessageDialog(null, "Wilkommen im Würfel Programm");
+            String wette0 = JOptionPane.showInputDialog("Glaubst du das der Würfel gerade[1] oder ungerade[2] ist ?");
+            int wette = Integer.parseInt(wette0);
 
 
             //Würfel
@@ -30,44 +28,44 @@ class Main {
 
             //Zahl die gewürfelt wurde und ob sie gerade oder ungerade ist
 
-            System.out.println("Du hast " + x + " gewürfelt");
+            JOptionPane.showMessageDialog(null,"Du hast "+ x +" gewürfelt");
 
-            if (x % 2 == 0) {
-                System.out.println("Die Zahl ist gerade");
+            if (x % 2 == 0){
+                JOptionPane.showMessageDialog(null,"Die Zahl ist gerade");
                 gerade = true;
             } else {
-                System.out.println("Die Zahl ist ungerade");
+                JOptionPane.showMessageDialog(null, "Die Zahl ist ungerade");
                 gerade = false;
             }
 
 
             //Kontrolliert ob das Ergebnis gerade ist
                 if (wette == 1 && gerade) {
-                    System.out.println("Du hast gewonnen");
+                    JOptionPane.showMessageDialog(null,"Du hast gewonnen");
 
                 } else if (wette == 2 && !gerade) {
-                    System.out.println("Du hast gewonnen");
+                    JOptionPane.showMessageDialog(null, "Du hast gewonnen");
 
                 } else if (wette == 1 && !gerade) {
-                    System.out.println("Du hast verloren");
+                    JOptionPane.showMessageDialog(null, "Du hast verloren");
 
                 } else if (wette == 2 && gerade) {
-                    System.out.println("Du hast verloren");
+                    JOptionPane.showMessageDialog(null, "Du hast verloren");
 
                 }
 
 
                 //Fragt ob das Programm beendet werden soll
-                System.out.println("[1]Nochmal Spielen");
-                System.out.println("[2]Beenden");
-                Scanner scanner2 = new Scanner(System.in);
-                int wiederholen = scanner2.nextInt();
-                if (wiederholen == 1) {
-                    System.out.println("Starte neu");
-                } else if (wiederholen == 2) {
-                    System.out.println("Wird beendet");
+                String ende = JOptionPane.showInputDialog("Soll das Programm beendet werden? (Ja oder Nein)");
+                // || Steht für oder
+                if (ende .equals("ja")  || ende .equals("Ja")){
+                    JOptionPane.showMessageDialog(null,"Programm wird beendet");
                     break;
-
+                }else if (ende .equals("nein") || ende .equals("Nein")){
+                    JOptionPane.showMessageDialog(null,"Dann nochmal von vorn :)");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Das nehm ich mal als nein :(");
+                    break;
                 }
             }
         }
